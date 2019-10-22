@@ -12,7 +12,7 @@ public class StreaminguppercaseApplication {
 
     @Bean
     public Function<Flux<String>, Flux<String>> streamingUppercase() {
-        return stringFlux -> stringFlux.map(String::toUpperCase);
+        return stringFlux -> stringFlux.log().map(String::toUpperCase);
     }
 
     public static void main(String[] args) {
